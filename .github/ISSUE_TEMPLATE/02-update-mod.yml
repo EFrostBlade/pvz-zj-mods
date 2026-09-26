@@ -1,0 +1,48 @@
+name: 更新或撤下条目
+description: 更新版本、修复入口、补充兼容信息，或由作者申请撤下作品。
+title: "[条目更新] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请指出已有条目及资料来源。更新沿用原条目，不重复申请收录。
+        作者申请撤下时，请提供能够与原发布来源核对的说明，不需要提供私密身份证明。
+  - type: input
+    id: entry
+    attributes:
+      label: 条目链接或路径
+      placeholder: mods/author.example/README.md
+    validations:
+      required: true
+  - type: input
+    id: mod_id
+    attributes:
+      label: Mod ID
+    validations:
+      required: true
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: 更新类型
+      options:
+        - 版本与内容更新
+        - 下载或来源链接修复
+        - 兼容信息或实测记录补充
+        - 维护状态或基本信息变更
+        - 作者申请撤下
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: 变更内容
+      description: 说明原内容与新内容。涉及版本时同时写 Mod 版本、游戏版本和平台；撤下请求请说明与作者的关系。
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 资料来源
+      description: 作者发布页、更新说明、可核对的撤下声明或带环境与步骤的实测证据；链接失效时写原地址及检查时间。
+    validations:
+      required: true

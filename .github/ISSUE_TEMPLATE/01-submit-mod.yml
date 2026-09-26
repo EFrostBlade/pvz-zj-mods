@@ -1,0 +1,140 @@
+name: 申请收录 Mod
+description: 作者投稿或玩家推荐一个有可核对来源的作品。
+title: "[收录] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先阅读仓库根目录的 CONTRIBUTING.md，并按 Mod ID 搜索已有条目。
+        本目录只登记资料与作者发布入口，不需要上传安装包。未知兼容信息请写“未确认”。
+  - type: dropdown
+    id: submitter_role
+    attributes:
+      label: 你与作品的关系
+      options:
+        - 作者或作品维护者
+        - 玩家推荐
+    validations:
+      required: true
+  - type: input
+    id: mod_name
+    attributes:
+      label: 作品名称
+    validations:
+      required: true
+  - type: input
+    id: mod_id
+    attributes:
+      label: Mod ID
+      description: 填写包内 mod.json 的 id；不是安装包文件名。
+      placeholder: author.example
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: 作者名称
+    validations:
+      required: true
+  - type: input
+    id: author_source
+    attributes:
+      label: 作者主页或可核对身份的发布页面
+      description: 可以与下面的原始发布页相同；玩家推荐请保留真实作者署名。
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 内容介绍
+      description: 先用一句话概括，再说明主要功能和游戏内使用入口。
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 主分类
+      options:
+        - 综合扩展
+        - 角色与卡牌
+        - 关卡与地图
+        - 玩法调整
+        - 外观与音效
+        - 工具与前置
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: 标签（可选）
+      description: 用逗号分隔，例如新植物、挑战。
+  - type: input
+    id: mod_version
+    attributes:
+      label: 当前收录的 Mod 版本
+      description: 原样填写作品版本；与游戏版本分别记录。
+    validations:
+      required: true
+  - type: input
+    id: game_versions
+    attributes:
+      label: 适用游戏版本
+      description: 写明作者声明及出处，或具体实测记录；未知写“未确认”。
+    validations:
+      required: true
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: 平台
+      options:
+        - 未确认
+        - Windows
+        - Android
+        - Windows 与 Android
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: 依赖、冲突与联机
+      description: 逐项填写并注明作者声明或实测来源。依赖写 Mod ID 和版本；没有资料写“未确认”。
+      placeholder: |
+        前置依赖：
+        已知冲突：
+        联机说明：
+        平台与兼容信息依据：
+    validations:
+      required: true
+  - type: input
+    id: release_page
+    attributes:
+      label: 原始发布页
+      description: 作者发布这份作品的完整网址。
+    validations:
+      required: true
+  - type: textarea
+    id: download
+    attributes:
+      label: 下载入口与访问条件
+      description: 可以填写同一个发布页；网盘请注明提取码、登录等要求。
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: 其他资料（可选）
+      description: 作者反馈入口、源码、授权说明、维护状态、截图或演示，以及特殊安装步骤和已知问题。
+  - type: textarea
+    id: verification
+    attributes:
+      label: 实测记录（可选）
+      description: 未实测可留空。有记录时填写游戏版本、Mod 版本、平台、同时启用的 Mod、步骤与结果、测试人、日期和证据链接。
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: 投稿确认
+      options:
+        - label: 我已按 Mod ID 搜索现有目录，重复或版本更新应使用更新入口。
+          required: true
+        - label: 我已保留作者和原始来源，并区分作者声明、实测与未确认信息。
+          required: true

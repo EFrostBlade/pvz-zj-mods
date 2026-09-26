@@ -1,0 +1,41 @@
+name: 目录与指南反馈
+description: 报告介绍、分类、链接或指南错误；作品自身故障请优先联系作者。
+title: "[目录反馈] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        本表单处理目录资料和指南。Mod 自身的玩法或运行问题，请使用条目中的作者反馈入口。
+        不确定属于哪类时，请描述实际情况；公开截图和日志前先检查个人信息。
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: 问题类型
+      options:
+        - 资料或分类错误
+        - 链接失效
+        - 指南步骤错误或不清楚
+        - 目录使用问题
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: 相关页面
+      description: 填写页面链接或仓库相对路径。
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 具体问题
+      description: 哪段说明有问题、预期是什么、实际发生了什么？涉及游戏操作时注明游戏版本、Mod 版本和平台。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 核对依据或补充信息
+      description: 可以提供作者说明、截图、检查时间或复现步骤。没有补充资料时写“暂无”。
+    validations:
+      required: true

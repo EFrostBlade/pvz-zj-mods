@@ -1,0 +1,12 @@
+# 本仓库收录介绍和作者发布入口，安装包与构建产物不入库。
+*.pmod
+*.zip
+*.7z
+*.rar
+*.dll
+*.exe
+*.pdb
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
