@@ -26,6 +26,7 @@
 - [豌豆强化](mods/peaoverhaul/README.md) — 作者：云漫行｜四种豌豆子弹放大 1.6×、穿透 8 个，纯覆盖型演示模板。
 - [向日葵女王僵尸](mods/sunflowerqueenzombie/README.md) — 作者：云漫行｜一包两角色：女王 6 颗追踪火球齐射 + 3×3 灼烧光环 + 召唤伴舞，舞者同款女王头。
 - [超级机枪读报僵尸](mods/supergatlingpaper/README.md) — 作者：云漫行｜读报身体配机枪射手头，1.5 秒连发 7 颗 + 10% 大招，报纸破后 3 倍速暴走。
+- [超级机枪射手](mods/supergatlingpea/README.md) — 作者：云漫行｜每 1.5 秒齐射 7 颗豌豆，10% 概率触发 5 秒 300 颗大招。
 
 ## 关卡与地图
 
