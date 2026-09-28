@@ -1,0 +1,237 @@
+name: Agent handle issues
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  issue_comment:
+    types: [created]
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Optional Issue number; leave blank to process the oldest queued Issue'
+        required: false
+        type: number
+
+permissions: {}
+
+concurrency:
+  group: agent-issue-${{ github.event.issue.number || github.event.inputs.issue_number || 'queue' }}
+  cancel-in-progress: false
+
+jobs:
+  intake:
+    if: github.event_name == 'issues' || (github.event_name == 'issue_comment' && !github.event.issue.pull_request)
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const issue = context.payload.issue;
+            if (!issue || issue.pull_request || issue.state !== 'open') return;
+            const labels = [
+              ['agent:queued', '1f6feb', 'Queued for automatic proposal'],
+              ['agent:needs-info', 'd4c5f9', 'Waiting for verifiable source information'],
+              ['agent:proposed', '0e8a16', 'Agent proposal or matching PR is open'],
+            ];
+            for (const [name, color, description] of labels) {
+              try {
+                await github.rest.issues.createLabel({ owner, repo, name, color, description });
+              } catch (error) {
+                if (error.status !== 422) throw error;
+              }
+            }
+            await github.rest.issues.removeLabel({ owner, repo, issue_number: issue.number, name: 'agent:needs-info' }).catch(e => { if (e.status !== 404) throw e; });
+            await github.rest.issues.addLabels({ owner, repo, issue_number: issue.number, labels: ['agent:queued'] });
+
+  propose:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    permissions:
+      contents: read
+      issues: read
+      pull-requests: read
+    outputs:
+      issue_number: ${{ steps.select.outputs.issue_number }}
+      base_sha: ${{ steps.base.outputs.sha }}
+      ready: ${{ steps.select.outputs.ready }}
+      final_message: ${{ steps.codex.outputs.final-message }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          persist-credentials: false
+      - id: base
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - id: select
+        uses: actions/github-script@v7
+        env:
+          REQUESTED_ISSUE: ${{ inputs.issue_number || '0' }}
+        with:
+          script: |
+            const fs = require('fs');
+            const { owner, repo } = context.repo;
+            const requested = Number(process.env.REQUESTED_ISSUE || 0);
+            if (!Number.isSafeInteger(requested) || requested < 0) throw new Error('Invalid Issue number');
+            const issue_number = requested || (await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: 'agent:queued', sort: 'created', direction: 'asc', per_page: 20 })).data.find(i => !i.pull_request)?.number;
+            if (!issue_number) { core.info('No queued Issue'); return; }
+            const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number });
+            if (issue.pull_request || issue.state !== 'open' || !issue.labels.some(l => l.name === 'agent:queued')) { core.info('Issue is no longer queued'); return; }
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            const linked = prs.find(pr => pr.head.ref === `agent/issue-${issue_number}` || new RegExp(`(?:^|\\W)#${issue_number}(?:\\W|$)`).test(pr.body || ''));
+            if (linked) {
+              core.info(`Existing PR #${linked.number} covers Issue #${issue_number}`);
+              core.setOutput('issue_number', String(issue_number));
+              core.setOutput('ready', 'existing');
+              return;
+            }
+            try {
+              await github.rest.git.getRef({ owner, repo, ref: `heads/agent/issue-${issue_number}` });
+              core.setOutput('issue_number', String(issue_number));
+              core.setOutput('ready', 'branch');
+              return;
+            } catch (error) { if (error.status !== 404) throw error; }
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const input = {
+              issue: { number: issue_number, title: issue.title, body: (issue.body || '').slice(0, 30000), author: issue.user.login },
+              comments: comments.slice(-20).map(c => ({ author: c.user.login, body: (c.body || '').slice(0, 4000), created_at: c.created_at })),
+              note: 'Long bodies and earlier comments may be truncated; ask for missing evidence rather than assuming it.',
+            };
+            fs.writeFileSync('.agent-issue-context.json', JSON.stringify(input, null, 2));
+            core.setOutput('issue_number', String(issue_number));
+            core.setOutput('ready', 'run');
+      - id: codex
+        if: steps.select.outputs.ready == 'run'
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          permission-profile: ':workspace'
+          safety-strategy: drop-sudo
+          prompt-file: .github/codex/issue-agent.md
+      - name: Collect bounded Markdown proposal
+        if: steps.select.outputs.ready == 'run'
+        env:
+          ISSUE_NUMBER: ${{ steps.select.outputs.issue_number }}
+        run: |
+          python - <<'PY'
+          import json, os, pathlib, re, shutil, subprocess
+          output = pathlib.Path('agent-proposal')
+          output.mkdir()
+          def git_paths(*args):
+              return [p.decode('utf-8') for p in subprocess.check_output(['git', 'ls-files', '-z', *args]).split(b'\0') if p]
+          changed = set(git_paths('--modified') + git_paths('--others', '--exclude-standard'))
+          changed.discard('.agent-issue-context.json')
+          if git_paths('--deleted'):
+              raise SystemExit('Agent deletion requires independent review')
+          allowed = re.compile(r'(?:README\.md|catalog\.md|guides/(?:[A-Za-z0-9_-]+/)*[A-Za-z0-9_-]+\.md|mods/[a-z0-9][a-z0-9._-]*/README\.md)\Z')
+          if len(changed) > 16 or any(not allowed.fullmatch(p) for p in changed):
+              raise SystemExit(f'Unexpected agent paths: {sorted(changed)}')
+          for path in sorted(changed):
+              source = pathlib.Path(path)
+              if source.is_symlink() or not source.is_file() or source.stat().st_size > 80000:
+                  raise SystemExit(f'Invalid proposal file: {path}')
+              source.read_text(encoding='utf-8')
+              target = output / path
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(source, target)
+          (output / 'manifest.json').write_text(json.dumps({'paths': sorted(changed), 'issue_number': int(os.environ['ISSUE_NUMBER'])}), encoding='utf-8')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: steps.select.outputs.ready == 'run'
+        with:
+          name: agent-proposal
+          path: agent-proposal/
+          if-no-files-found: error
+          retention-days: 1
+
+  publish:
+    needs: propose
+    if: needs.propose.result == 'success' && needs.propose.outputs.ready != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@v4
+        if: needs.propose.outputs.ready == 'run'
+        with:
+          name: agent-proposal
+          path: agent-proposal
+      - uses: actions/github-script@v7
+        env:
+          ISSUE_NUMBER: ${{ needs.propose.outputs.issue_number }}
+          BASE_SHA: ${{ needs.propose.outputs.base_sha }}
+          READY: ${{ needs.propose.outputs.ready }}
+          AGENT_MESSAGE: ${{ needs.propose.outputs.final_message }}
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const { owner, repo } = context.repo;
+            const issue_number = Number(process.env.ISSUE_NUMBER);
+            if (!Number.isSafeInteger(issue_number) || issue_number < 1) throw new Error('Invalid Issue number');
+            const { data: issue } = await github.rest.issues.get({ owner, repo, issue_number });
+            if (issue.state !== 'open' || !issue.labels.some(l => l.name === 'agent:queued')) return;
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            const existing = prs.find(pr => pr.head.ref === `agent/issue-${issue_number}` || new RegExp(`(?:^|\\W)#${issue_number}(?:\\W|$)`).test(pr.body || ''));
+            if (existing || process.env.READY === 'existing') {
+              if (existing) {
+                await github.rest.issues.removeLabel({ owner, repo, issue_number, name: 'agent:queued' });
+                await github.rest.issues.addLabels({ owner, repo, issue_number, labels: ['agent:proposed'] });
+              }
+              return;
+            }
+            if (process.env.READY === 'branch') {
+              const branch = `agent/issue-${issue_number}`;
+              const { data: pr } = await github.rest.pulls.create({ owner, repo, head: branch, base: 'main', draft: true, title: `Agent proposal for Issue #${issue_number}: ${issue.title}`.slice(0, 180), body: `关联 #${issue_number}\n\n自动处理作业已恢复此前创建的分支。来源与兼容性仍需由 PR 审阅 agent 独立核对。` });
+              await github.rest.issues.removeLabel({ owner, repo, issue_number, name: 'agent:queued' });
+              await github.rest.issues.addLabels({ owner, repo, issue_number, labels: ['agent:proposed'] });
+              await github.rest.issues.createComment({ owner, repo, issue_number, body: `已恢复自动处理草稿 PR：${pr.html_url}。` });
+              return;
+            }
+            if (process.env.READY !== 'run') return;
+            const { data: main } = await github.rest.git.getRef({ owner, repo, ref: 'heads/main' });
+            if (main.object.sha !== process.env.BASE_SHA) throw new Error('main changed during proposal; requeue this Issue');
+            const root = 'agent-proposal';
+            const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.json'), 'utf8'));
+            const paths = manifest.paths;
+            const allowed = /^(?:README\.md|catalog\.md|guides\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.md|mods\/[a-z0-9][a-z0-9._-]*\/README\.md)$/;
+            if (manifest.issue_number !== issue_number || !Array.isArray(paths) || paths.length > 16 || new Set(paths).size !== paths.length || paths.some(p => typeof p !== 'string' || !allowed.test(p))) throw new Error('Invalid artifact manifest');
+            const summary = (process.env.AGENT_MESSAGE || 'Agent 未提供总结。').slice(0, 5000);
+            if (!paths.length) {
+              const marker = `<!-- agent-issue:${issue_number}:${process.env.BASE_SHA} -->`;
+              const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+              if (!comments.some(c => c.body?.includes(marker))) await github.rest.issues.createComment({ owner, repo, issue_number, body: `${marker}\nAgent 暂未生成可发布的改动：\n\n${summary}` });
+              await github.rest.issues.removeLabel({ owner, repo, issue_number, name: 'agent:queued' });
+              await github.rest.issues.addLabels({ owner, repo, issue_number, labels: ['agent:needs-info'] });
+              return;
+            }
+            const branch = `agent/issue-${issue_number}`;
+            try {
+              await github.rest.git.getRef({ owner, repo, ref: `heads/${branch}` });
+              throw new Error(`Branch ${branch} already exists; inspect it instead of overwriting`);
+            } catch (error) { if (error.status !== 404) throw error; }
+            const { data: base } = await github.rest.git.getCommit({ owner, repo, commit_sha: process.env.BASE_SHA });
+            const tree = [];
+            for (const file of paths) {
+              const local = path.join(root, file);
+              const info = fs.lstatSync(local);
+              if (!info.isFile() || info.size > 80000) throw new Error(`Invalid artifact file: ${file}`);
+              const content = fs.readFileSync(local, 'utf8');
+              if (content.includes('\0')) throw new Error(`NUL in ${file}`);
+              const { data: blob } = await github.rest.git.createBlob({ owner, repo, content, encoding: 'utf-8' });
+              tree.push({ path: file, mode: '100644', type: 'blob', sha: blob.sha });
+            }
+            const { data: newTree } = await github.rest.git.createTree({ owner, repo, base_tree: base.tree.sha, tree });
+            const { data: commit } = await github.rest.git.createCommit({ owner, repo, message: `Prepare Issue #${issue_number} directory update`, tree: newTree.sha, parents: [process.env.BASE_SHA] });
+            await github.rest.git.createRef({ owner, repo, ref: `refs/heads/${branch}`, sha: commit.sha });
+            const { data: pr } = await github.rest.pulls.create({ owner, repo, head: branch, base: 'main', draft: true, title: `Agent proposal for Issue #${issue_number}: ${issue.title}`.slice(0, 180), body: `关联 #${issue_number}\n\n## Agent 草稿\n\n${summary}\n\n来源与兼容性需由 PR 审阅 agent 独立核对后才能合并。` });
+            await github.rest.issues.removeLabel({ owner, repo, issue_number, name: 'agent:queued' });
+            await github.rest.issues.addLabels({ owner, repo, issue_number, labels: ['agent:proposed'] });
+            await github.rest.issues.createComment({ owner, repo, issue_number, body: `已创建自动处理草稿 PR：${pr.html_url}。来源与目录一致性将在 PR 审阅阶段核对。` });
