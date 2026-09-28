@@ -13,8 +13,8 @@
 | 当前收录版本 | `1.0.0` |
 | 适用游戏版本 | 作者声明：`0.28`（开发与实机演示基于该版本）；尚未在 `0.29.0` 验证 |
 | 平台 | 作者声明：Windows；Android 未确认 |
-| 前置依赖 | 未确认（作者站点未声明前置依赖；包清单未独立核对） |
-| 已知冲突 | 未确认，作者站点未声明冲突。另据历史报告：[cd显示（血条·装填倒计时）](../healthcooldowndisplay/README.md) 作者曾在 `1.7.8` 投稿时报告与自定义植物、僵尸类 Mod 冲突；其 `1.14.1` 是否解决及与本作品的具体兼容性未确认 |
+| 前置依赖 | 包清单 `dependencies` 为空；作者声明：无 |
+| 已知冲突 | 包清单 `conflicts` 为空；作者声明：无。另据历史报告：[cd显示（血条·装填倒计时）](../healthcooldowndisplay/README.md) 作者曾在 `1.7.8` 投稿时报告与自定义植物、僵尸类 Mod 冲突；其 `1.14.1` 是否解决及与本作品的具体兼容性未确认 |
 | 联机说明 | 未确认，作者未提供联机说明或实测记录 |
 | 作者维护状态 | 维护中（作者声明，2026-09-27） |
 | 信息核对日期 | 2026-09-28 |
@@ -48,7 +48,7 @@
 
 作者声明：适用游戏版本 `0.28`、平台 Windows，功能以[作者发布站详情页](https://josnil.github.io/pvz-mods/mod/ultimatecherrygod.html)与 B 站演示为准；未提供联机或组合兼容实测记录。
 
-包清单核对：未独立核对（作者未随投稿提供包内 `mod.json` 摘录）；ID 与版本依据作者发布站（ID `ultimatecherrygod`、版本 `1.0.0`）。
+包清单核对（2026-09-28，作者补充实际发布包）：下载入口[夸克分享](https://pan.quark.cn/s/f8cacc624df8)中的 `究极樱桃战神.pmod`（517,325 字节，SHA-256 `9bdbb3bd36b77672967fa8cc38e4a793de3272ca44f91a8ca5185be24ae3f326`）解包核对，包内 `mod.json`：ID `ultimatecherrygod`、名称「究极樱桃战神」、版本 `1.0.0`、作者 云漫行、`dependencies: []`、`conflicts: []`；含托管运行时 `Runtime/ModAssembly.dll`（`provides`：Character / CharacterSprite / Packet / Projectile）。
 
 资料核对：版本、平台、维护状态及包清单记录以[作者投稿 PR #4](https://github.com/EFrostBlade/pvz-zj-mods/pull/4)和作者发布站为来源；本次维护者仅核对公开资料，未下载、安装或运行这些 Mod。
 
@@ -60,5 +60,6 @@
 
 ## 条目更新记录
 
+- 2026-09-28：作者补充实际发布包（[夸克分享](https://pan.quark.cn/s/f8cacc624df8)，517,325 字节）的包内 `mod.json` 摘录，补齐包清单依据；同步更新前置依赖与已知冲突字段。
 - 2026-09-28：核对[作者投稿 PR #4](https://github.com/EFrostBlade/pvz-zj-mods/pull/4)与作者发布站，整理下载入口、安装链接和兼容声明的来源及版本范围；未进行包内容或实机验证。
 - 2026-09-27：首次收录 `1.0.0`；资料来源：[作者发布站详情页](https://josnil.github.io/pvz-mods/mod/ultimatecherrygod.html)。
