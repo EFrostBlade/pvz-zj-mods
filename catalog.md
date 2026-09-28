@@ -37,4 +37,4 @@
 
 ## 工具与前置
 
-- [cd显示（血条·装填倒计时）](mods/healthcooldowndisplay/README.md) — 作者：apples1949｜在角色血条上方显示冷却倒计时、装填进度和剩余次数。
+- [cd显示（血条·装填倒计时）](mods/healthcooldowndisplay/README.md) — 作者：apples1949｜显示角色冷却、装填进度、障碍物血量和种植冷却，支持分类开关。
