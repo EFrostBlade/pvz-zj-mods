@@ -20,6 +20,10 @@
 
 更新、链接修复、维护状态变化或作者撤下请求使用 **更新或撤下条目**。目录与指南本身的问题使用 **目录与指南反馈**。
 
+- [申请收录 Mod](https://github.com/EFrostBlade/pvz-zj-mods/issues/new?template=01-submit-mod.yml)
+- [更新或撤下条目](https://github.com/EFrostBlade/pvz-zj-mods/issues/new?template=02-update-mod.yml)
+- [目录与指南反馈](https://github.com/EFrostBlade/pvz-zj-mods/issues/new?template=03-report.yml)
+
 ## 通过 PR 投稿
 
 1. 先按 Mod ID 搜索现有目录。ID 比较不区分大小写；更新或改名沿用原条目。
@@ -34,6 +38,10 @@
 ```
 
 只修改单个作品时，通常仅需改详情页和分类目录。不要在仓库中上传 `.pmod`、源码压缩包或编译产物。
+
+网站会从这两处 Markdown 自动生成目录卡片，不需要额外填写网站数据文件。请保留模板中的“项目 / 内容”表格和字段名；标签使用顿号或逗号分隔，核对日期使用 `YYYY-MM-DD`。卡片简介取目录行中 `｜` 后的文字。
+
+纯资料投稿无需安装网站工具；PR 会自动检查字段、重复 ID、分类、内部链接及网站构建。需要本地预览时，按[网站维护说明](MAINTAINING.md#网站开发与发布)操作。新增条目仍需人工审核，检查通过不会自动收录或合并。
 
 ## 详情页模板
 

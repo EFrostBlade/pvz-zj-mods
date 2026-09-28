@@ -1,0 +1,25 @@
+{
+  "name": "pvz-zj-mods",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev --host 127.0.0.1",
+    "docs:build": "npm run check:content && vitepress build",
+    "docs:preview": "vitepress preview --host 127.0.0.1 --port 4173",
+    "check:content": "node scripts/check-content.mjs",
+    "test": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0",
+    "markdown-it": "^14.1.0",
+    "vitepress": "1.6.4",
+    "vue": "^3.5.13"
+  },
+  "overrides": {
+    "vite": "6.4.3"
+  }
+}
