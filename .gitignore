@@ -10,3 +10,8 @@
 Thumbs.db
 Desktop.ini
 *.tmp
+node_modules/
+.vitepress/cache/
+.vitepress/dist/
+test-results/
+playwright-report/
