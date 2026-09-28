@@ -14,10 +14,10 @@
 | 适用游戏版本 | 作者声明：`0.28`（开发与实机演示基于该版本）；尚未在 `0.29.0` 验证 |
 | 平台 | 作者声明：Windows；Android 未确认 |
 | 前置依赖 | 未确认（作者站点未声明前置依赖；包清单未独立核对） |
-| 已知冲突 | 未确认（作者站点未声明冲突） |
+| 已知冲突 | 未确认，作者站点未声明冲突。另据历史报告：[cd显示（血条·装填倒计时）](../healthcooldowndisplay/README.md) 作者曾在 `1.7.8` 投稿时报告与自定义植物、僵尸类 Mod 冲突；其 `1.14.1` 是否解决及与本作品的具体兼容性未确认 |
 | 联机说明 | 未确认，作者未提供联机说明或实测记录 |
 | 作者维护状态 | 维护中（作者声明，2026-09-27） |
-| 信息核对日期 | 2026-09-27 |
+| 信息核对日期 | 2026-09-28 |
 
 ## 内容介绍
 
@@ -32,23 +32,25 @@
 
 ## 作者与下载
 
-- 作者主页：[云漫行（bilibili）](https://www.bilibili.com/video/BV1hthU6TEjF/)；身份可经视频简介引用的作者技能仓库 [josnil/pvz-hybrid-mod-skills](https://github.com/josnil/pvz-hybrid-mod-skills) 交叉核对。
+- 作者主页：[云漫行的发布视频（bilibili）](https://www.bilibili.com/video/BV1hthU6TEjF/)；作者身份依据[作者投稿 PR #4](https://github.com/EFrostBlade/pvz-zj-mods/pull/4)的本人声明与作品发布站。
 - 原始发布页：[josnil 的杂交版 Mod 存放站 · 本作品详情页](https://josnil.github.io/pvz-mods/mod/ultimatecherrygod.html)。
-- 下载入口：[夸克网盘（本 Mod 独立分享）](https://pan.quark.cn/s/f8cacc624df8)（免提取码），或 [GitHub Release](https://github.com/josnil/pvz-mods/releases/latest/download/ultimatecherrygod.pmod)（`究极樱桃战神.pmod`）。
+- 下载入口：[夸克网盘（本 Mod 独立分享）](https://pan.quark.cn/s/f8cacc624df8)。链接来自作者发布站，作者标注免提取码；维护者未独立下载分享内容，登录或客户端要求以网盘实际提示为准。
 - 作者反馈入口：B 站视频评论区（见上）。
 - 源码：未公开。
 - 授权说明：未提供。
 
 ## 安装与使用
 
-1. 从上述下载入口获取 `.pmod`，按 [Windows](../../guides/players/README.md) 或 Android 指南导入、启用并重启。
+1. 从上述下载入口获取 `.pmod`，按 [Windows 安装指南](../../guides/players/windows.md)导入、启用并重启。Android 兼容性未确认；通用导入步骤见 [Android 指南](../../guides/players/android.md)。
 2. 卡片在选卡界面出现（钻卡）。
 
 ## 兼容依据与实测记录
 
 作者声明：适用游戏版本 `0.28`、平台 Windows，功能以[作者发布站详情页](https://josnil.github.io/pvz-mods/mod/ultimatecherrygod.html)与 B 站演示为准；未提供联机或组合兼容实测记录。
 
-包清单核对：未独立核对（作者未随投稿提供包内 `mod.json` 摘录）；ID 与版本依据作者发布站数据层（ID `ultimatecherrygod`、版本 `1.0.0`）。
+包清单核对：未独立核对（作者未随投稿提供包内 `mod.json` 摘录）；ID 与版本依据作者发布站（ID `ultimatecherrygod`、版本 `1.0.0`）。
+
+资料核对：版本、平台、维护状态及包清单记录以[作者投稿 PR #4](https://github.com/EFrostBlade/pvz-zj-mods/pull/4)和作者发布站为来源；本次维护者仅核对公开资料，未下载、安装或运行这些 Mod。
 
 社区实测：暂无记录。
 
@@ -58,4 +60,5 @@
 
 ## 条目更新记录
 
+- 2026-09-28：核对[作者投稿 PR #4](https://github.com/EFrostBlade/pvz-zj-mods/pull/4)与作者发布站，整理下载入口、安装链接和兼容声明的来源及版本范围；未进行包内容或实机验证。
 - 2026-09-27：首次收录 `1.0.0`；资料来源：[作者发布站详情页](https://josnil.github.io/pvz-mods/mod/ultimatecherrygod.html)。
