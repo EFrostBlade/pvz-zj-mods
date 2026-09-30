@@ -13,7 +13,7 @@
 | 当前收录版本 | `1.3.3` |
 | 适用游戏版本 | 作者在 [Issue #7](https://github.com/EFrostBlade/pvz-zj-mods/issues/7) 声明 0.29；维护者未实测 |
 | 平台 | 作者在投稿声明 Windows 与 Android；维护者未实测 |
-| 前置依赖 | 作者投稿声明无；实际发布包清单 dependencies 为空 |
+| 前置依赖 | 作者投稿声明无其他 Mod 前置；实际包 dependencies 为空，含托管运行时插件（见安装说明） |
 | 已知冲突 | 作者投稿声明无；实际发布包清单 conflicts 为空，不代表任意组合已验证 |
 | 联机说明 | 未确认；投稿中的“无”未明确说明支持情况 |
 | 作者维护状态 | 未确认 |
@@ -37,6 +37,8 @@
 按照 [Windows 安装指南](../../guides/players/windows.md) 或 [Android 安装指南](../../guides/players/android.md) 导入作者的 `.pmod` 文件。Android 支持仅为作者投稿声明，未作维护者兼容保证。
 
 在选卡界面选择「经典模仿者」彩卡，随后按作者说明使用复制功能。
+
+本包含 `Runtime/ModAssembly.dll` 托管插件，清单 `runtimeAssemblyPolicy` 为 `optional`。空 `dependencies` 仅表示未声明其他 Mod 前置，不表示纯资源包，也不保证插件未加载时功能完整。
 
 ## 兼容依据与实测记录
 

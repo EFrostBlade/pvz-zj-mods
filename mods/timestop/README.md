@@ -13,7 +13,7 @@
 | 当前收录版本 | `1.0.29` |
 | 适用游戏版本 | 作者在 [Issue #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8) 声明 0.29；维护者未实测 |
 | 平台 | 作者在投稿声明 Windows 与 Android；维护者未实测 |
-| 前置依赖 | 作者投稿声明无；实际发布包清单 dependencies 为空 |
+| 前置依赖 | 作者投稿声明无其他 Mod 前置；实际包 dependencies 为空，含托管运行时插件（见安装说明） |
 | 已知冲突 | 作者投稿声明无；实际发布包清单 conflicts 为空，不代表任意组合已验证 |
 | 联机说明 | 1.0.29 未确认；作者 upload tag 的旧版 README 提示多人模式未适配，见下方版本边界 |
 | 作者维护状态 | 未确认 |
@@ -37,6 +37,8 @@
 按照 [Windows 安装指南](../../guides/players/windows.md) 或 [Android 安装指南](../../guides/players/android.md) 导入作者的 `.pmod` 文件。Android 支持仅为作者投稿声明，未作维护者兼容保证。
 
 作者说明：游戏内「加速」按钮下方的「时停」按钮用于切换；未触发为绿色，触发中为红色。
+
+本包含 `Runtime/ModAssembly.dll` 托管插件，清单 `runtimeAssemblyPolicy` 为 `optional`。空 `dependencies` 仅表示未声明其他 Mod 前置，不表示纯资源包，也不保证插件未加载时功能完整。
 
 ## 兼容依据与实测记录
 
