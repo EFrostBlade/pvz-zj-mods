@@ -4,7 +4,7 @@
 
 显示角色冷却、装填进度、障碍物血量和选卡栏种植冷却等信息，帮助观察战斗中的关键状态。
 
-> **兼容提醒：作者在 `1.7.8` 投稿时报告过与各类自定义植物、僵尸类 Mod 冲突。** 本次更新未明确说明该冲突是否解决，`1.19.3` 的组合兼容性仍未确认。
+> **兼容提醒：作者在 `1.7.8` 投稿时报告过与各类自定义植物、僵尸类 Mod 冲突。** 本次更新未明确说明该冲突是否解决，`1.20.1` 的组合兼容性仍未确认。
 
 > 更新草稿：蓝奏云分享页与密码已核对，实际包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
 
@@ -14,7 +14,7 @@
 | 作者 | [apples1949](https://github.com/apples1949)（依据投稿与发布来源） |
 | 主分类 | 工具与前置 |
 | 标签 | 冷却显示、战斗信息、血条 |
-| 当前收录版本 | `1.19.3` |
+| 当前收录版本 | `1.20.1` |
 | 适用游戏版本 | 作者在 `1.7.8` [收录申请](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)中声明 `0.29`；本次更新未重新确认 |
 | 平台 | 作者此前声明 Windows 与 Android；本次更新未重新确认，未独立实测 |
 | 前置依赖 | 包清单未声明前置依赖；作者未另行说明实际需求 |
@@ -25,14 +25,19 @@
 
 ## 内容介绍
 
-本次 `1.19.3` 更新依据[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)，作者说明如下（维护者未实测）：
+本次 GitHub 实际附件为 `1.20.1`，依据[作者版本历史](https://github.com/apples1949/pvzhe-HealthCooldownLine/blob/f5d3dcdc382d8560ceb698003d16957efeae9d1b/README.md)与包内清单（维护者未实测）：
+
+- `1.20.0`：将「只显示 ≥5 秒」改为按计时器总时长判定；总时长低于 4.9 秒时整行隐藏，否则剩余时间一路显示至 0。
+- `1.20.1`：修复泡椒罐子装填数恒为 `0/4`、发射倒计时不出现的问题。
+
+此前 `1.19.3` 更新依据[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)，作者说明如下（维护者未实测）：
 
 修复无法攻击的墓碑显示血量的问题
 修复充能大喷菇与豆荚壳不显示叠种等级的问题
 新增：我是僵尸系（IZM / IZM2）「血量产出剩余触发次数」显示（脑光/阳光 剩 N/M 次）
 新增：「伪装」家族（伪装向日葵 / 伪装机枪射手 / 伪装樱桃 / 伪装三叶草）剩余触发次数显示（各 6 次）
 新增：泡椒罐子「装填 N/4」与「发射 X.Xs」
-新增：设置页「只显示 ≥5 秒」开关（优先级仅次于总开关），打开后低于 4.9 秒的计时不再显示
+新增：设置页「只显示 ≥5 秒」开关（优先级仅次于总开关）；此处为旧版行为，`1.20.0` 起按上方总时长规则判定
 修复：我是僵尸下不再显示植物的「阳光生产倒计时」（该模式植物按掉血产出、timer 恒为 0，原显示为假倒计时）
 修复：血量产出剩余次数显示成「最大值 − 1」（初始 hpNext = 满血 − 一段，公式需减 1，现满血显示 6/6）
 修复：伪装向日葵同时显示「阳光生产时间」与「次数」（改为计时产出 / 血量产出严格互斥判据）
@@ -51,8 +56,8 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/tag/releases)；附件更新后需以包内版本为准。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；列表中的 ZIP 文件名标示对应投稿版本，但尚未下载核对 ZIP 内实际包，不能确认与下列 GitHub 附件一致。
-- 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/download/releases/HealthCooldownLine.pmod)，本轮实际包版本 `1.19.3`，公开可下载；不承诺附件不被替换。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；前轮列表文件名为 `1.19.3`，尚未取得实际 ZIP；本轮未重新请求网盘，不能确认其当前版本或与 GitHub `1.20.1` 一致。
+- 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/download/releases/HealthCooldownLine.pmod)，本轮实际包版本 `1.20.1`，公开可下载；不承诺附件不被替换。
 - 作品主页：[pvzhe-HealthCooldownLine](https://github.com/apples1949/pvzhe-HealthCooldownLine)。
 - 作者反馈入口：未单独指定，可通过上述作者发布来源查找后续反馈方式。
 - 源码：已公开[实现源码](https://github.com/apples1949/pvzhe-HealthCooldownLine/tree/607c48238bb07a66ad68a5a5303ba92683d98306/runtime_src)，链接固定到此前 `1.14.1` 更新申请提供的提交，不代表当前发布包源码。
@@ -68,9 +73,11 @@
 
 ## 兼容依据与实测记录
 
-2026-10-08 当前包核对：重新下载 GitHub Release 附件，只读查看 ZIP 列表及 `mod.json`：ID `healthcooldowndisplay`、版本 `1.19.3`、作者“本地”，`dependencies` / `conflicts` 为空，引用的运行时 DLL 存在。包体 30,815 B，SHA-256 `7cecc831ab80f814dd8b95d453f410818aaceb5f51ca514541b36cb4581c49ce`，与 GitHub 资产元数据一致。未执行包内代码，未将空冲突清单视为兼容证明；新版游戏、平台及联机适用范围没有独立实测，历史声明仍按原版本保留。
+2026-10-08 当前包核对：重新下载 GitHub Release 附件，只读查看 ZIP 列表及 `mod.json`：ID `healthcooldowndisplay`、版本 `1.20.1`、作者“本地”，`dependencies` / `conflicts` 为空，ZIP 仅有 `mod.json`（1,663 B）与 `Runtime/ModAssembly.dll`（69,120 B），无路径越界或符号链接。包体 31,400 B，SHA-256 `2ba13183dd965985f381e3ba63c54c7fe7b1c8b2aa7adcbe5959ac7f8020cbf2`，与 GitHub 资产元数据一致。未执行包内代码，未将空冲突清单视为兼容证明；新版游戏、平台及联机适用范围没有独立实测，历史声明仍按原版本保留。
 
 以下为历史版本核对记录：
+
+- `1.19.3`：前轮实际核对 30,815 B，SHA-256 `7cecc831ab80f814dd8b95d453f410818aaceb5f51ca514541b36cb4581c49ce`；同一 GitHub 下载地址现已替换为 `1.20.1`，旧摘要不标识当前附件。
 
 - **作者声明**：游戏版本 `0.29`、Windows 与 Android，以及自定义植物/僵尸类 Mod 冲突，均来自 `1.7.8` 的[收录申请 #1](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)。[更新申请 #2](https://github.com/EFrostBlade/pvz-zj-mods/issues/2)说明补全待办并增加障碍物血量显示，未重新确认版本、平台、联机或组合兼容范围。
 - **包清单核对**：2026-09-28 读取发布附件中的 `mod.json`，确认 ID 为 `healthcooldowndisplay`、版本为 `1.14.1`，与发布页及本次源码提交的清单一致；`dependencies` 与 `conflicts` 均为空。空冲突列表不能证明历史冲突已解决。
@@ -86,7 +93,7 @@
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.19.3` 更新草稿，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包；下载入口核对尚未完成。
+- 2026-10-08：整理 `1.20.1` 更新草稿，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包、作者版本历史；草稿从 `1.19.3` 更新为 `1.20.1`，下载映射及新版兼容范围仍待确认。
 
 - 2026-09-28：更新至 `1.14.1`；依据[更新申请 #2](https://github.com/EFrostBlade/pvz-zj-mods/issues/2)、[作者源码提交](https://github.com/apples1949/pvzhe-HealthCooldownLine/commit/607c48238bb07a66ad68a5a5303ba92683d98306)及发布附件，更新功能、设置开关、源码和维护状态，保留历史兼容声明及未实测边界。
 - 2026-09-27：首次收录 `1.7.8`；依据[作者投稿](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)、作品介绍与发布包清单整理，主分类按辅助显示功能归入“工具与前置”。

@@ -28,6 +28,8 @@
 1.给游戏关卡入口增加点击反馈：窗口变深色以及窗口变小 参考墓碑点击状态
 2.在图鉴-道具图鉴中增加自动拾取开关 需要注意 选择关闭后 商店状态也会变成未购买状态 是正常情况
 
+作者于 2026-10-08 新增的 [README](https://github.com/apples1949/pvzhe-MobileTapFeedback/blob/f0d4a52319f2bf7e439d28abe191c86f8e1d32cd/README.md) 说明：阳光与金币有独立自动拾取开关，设置写入存档并同步场上已有物件；本作由 MobileUXFixes 拆分，两者分别安装。此为作者说明，未构成维护者实测或新增兼容证明。
+
 ## 作者与下载
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
