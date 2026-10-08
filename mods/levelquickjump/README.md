@@ -4,7 +4,7 @@
 
 记忆各类关卡上次选择的章节，返回时自动定位。
 
-> 收录草稿：作者指定蓝奏云入口的访问及文件版本尚未独立核实，暂不合并。下列包清单来自另行核对的 GitHub Release 附件。
+> 收录草稿：蓝奏云分享页与密码已核对，实际文件版本尚未独立核实，暂不合并。下列包清单来自另行核对的 GitHub Release 附件。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -33,7 +33,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-LevelQuickJump/releases/tag/upload)。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，作者提供访问密码 `762b`，称统一维护并随版本更新；本次访问被环境代理以 403 拒绝，未核实目录内容及与 GitHub 附件的一致性。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，作者提供访问密码 `762b`，称统一维护并随版本更新；2026-10-08 已打开分享页并用该密码列出文件；列表中的 ZIP 文件名标示对应投稿版本，但尚未下载核对 ZIP 内实际包，不能确认与下列 GitHub 附件一致。
 - 补充核对来源：[GitHub Release 附件 LevelQuickJump.pmod](https://github.com/apples1949/pvzhe-LevelQuickJump/releases/download/upload/LevelQuickJump.pmod)，本轮可公开下载；该地址的附件可能被作者替换，请以包内版本为准。
 - 作者反馈入口：[作者投稿 #21](https://github.com/EFrostBlade/pvz-zj-mods/issues/21)。
 - 源码：[作者公开工程](https://github.com/apples1949/pvzhe-LevelQuickJump)；本轮未编译或运行。
@@ -68,7 +68,7 @@ Mod 版本：1.0.0 至 1.4.0
 
 ## 已知问题
 
-未确认。蓝奏云的当前包版本和访问条件待核实。
+未确认。蓝奏云分享页及密码已核对；实际 ZIP 内包版本、与 GitHub 副本的一致性及后续下载条件仍待核实。
 
 ## 条目更新记录
 

@@ -4,7 +4,7 @@
 
 新增时停按钮，暂停战场运动，同时允许种植、铲除和收集资源。
 
-> 更新草稿：作者指定的蓝奏云入口访问与包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
+> 更新草稿：蓝奏云分享页与密码已核对，实际包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -38,7 +38,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)；投稿人和原始 Release 发布者为同一账号。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-TimeStop/releases/tag/upload)；附件更新后需以包内版本为准。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)；作者称统一维护并随版本更新。本次访问被环境代理以 403 拒绝，未核实网盘内实际包版本或与 GitHub 副本的一致性。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；列表中的 ZIP 文件名标示对应投稿版本，但尚未下载核对 ZIP 内实际包，不能确认与下列 GitHub 附件一致。
 - 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-TimeStop/releases/download/upload/TimeStop.pmod)，本轮实际包版本 `1.0.31`，公开可下载；不承诺附件不被替换。
 - 作者反馈入口：[投稿 Issue #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8)。
 - 源码：[作者公开工程](https://github.com/apples1949/pvzhe-TimeStop/tree/upload)。

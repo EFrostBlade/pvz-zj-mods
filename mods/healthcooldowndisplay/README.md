@@ -6,7 +6,7 @@
 
 > **兼容提醒：作者在 `1.7.8` 投稿时报告过与各类自定义植物、僵尸类 Mod 冲突。** 本次更新未明确说明该冲突是否解决，`1.19.3` 的组合兼容性仍未确认。
 
-> 更新草稿：作者指定的蓝奏云入口访问与包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
+> 更新草稿：蓝奏云分享页与密码已核对，实际包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -51,7 +51,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/tag/releases)；附件更新后需以包内版本为准。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)；作者称统一维护并随版本更新。本次访问被环境代理以 403 拒绝，未核实网盘内实际包版本或与 GitHub 副本的一致性。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；列表中的 ZIP 文件名标示对应投稿版本，但尚未下载核对 ZIP 内实际包，不能确认与下列 GitHub 附件一致。
 - 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/download/releases/HealthCooldownLine.pmod)，本轮实际包版本 `1.19.3`，公开可下载；不承诺附件不被替换。
 - 作品主页：[pvzhe-HealthCooldownLine](https://github.com/apples1949/pvzhe-HealthCooldownLine)。
 - 作者反馈入口：未单独指定，可通过上述作者发布来源查找后续反馈方式。
