@@ -20,6 +20,7 @@
 - [点击反馈与自动拾取开关](mods/mobiletapfeedback/README.md) — 作者：apples1949｜为关卡入口增加按压反馈，并提供阳光与金币自动拾取开关。
 - [手机端操作修复](mods/mobileuxfixes/README.md) — 作者：apples1949｜滑动选卡时撤销误选，并改善再次点击卡牌取消选择。
 
+- [白卡分类](mods/whitecardcategories/README.md) — 作者：apples1949｜以五大类和标签筛选白卡，支持自动归类与字号记忆。
 
 ## 角色与卡牌
 
@@ -48,3 +49,4 @@
 ## 工具与前置
 
 - [cd显示（血条·装填倒计时）](mods/healthcooldowndisplay/README.md) — 作者：apples1949｜显示角色冷却、装填进度、障碍物血量和种植冷却，支持分类开关。
+- [图鉴商店快捷按钮](mods/uiextrabuttons/README.md) — 作者：apples1949｜在横版 UI 的选卡阶段补充商店与图鉴入口。
