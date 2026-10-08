@@ -4,9 +4,9 @@
 
 显示角色冷却、装填进度、障碍物血量和选卡栏种植冷却等信息，帮助观察战斗中的关键状态。
 
-> **兼容提醒：作者在 `1.7.8` 投稿时报告过与各类自定义植物、僵尸类 Mod 冲突。** 本次更新未明确说明该冲突是否解决，`1.20.1` 的组合兼容性仍未确认。
+> 作者在[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)报告：当前版本已解决旧版自定义植物、僵尸类 Mod 的程序集身份名冲突。维护者未复现，不构成所有组合兼容保证。
 
-> 更新草稿：蓝奏云分享页与密码已核对，实际包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
+> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -15,10 +15,10 @@
 | 主分类 | 工具与前置 |
 | 标签 | 冷却显示、战斗信息、血条 |
 | 当前收录版本 | `1.20.1` |
-| 适用游戏版本 | 作者在 `1.7.8` [收录申请](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)中声明 `0.29`；本次更新未重新确认 |
-| 平台 | 作者此前声明 Windows 与 Android；本次更新未重新确认，未独立实测 |
+| 适用游戏版本 | 作者对 `1.20.1` 声明 `0.29.0`；见[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)，维护者未实测 |
+| 平台 | 作者对 `1.20.1` 报告 Windows 与 Android 均实测可用；维护者未复现 |
 | 前置依赖 | 包清单未声明前置依赖；作者未另行说明实际需求 |
-| 已知冲突 | `1.7.8` 曾由作者报告自定义植物、僵尸类 Mod 冲突；具体范围及新版是否解决未确认 |
+| 已知冲突 | 作者报告当前版本已解决旧版程序集身份名冲突；其他组合未独立验证，见[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375) |
 | 联机说明 | 未确认，作者未提供联机说明或实测记录 |
 | 作者维护状态 | 作者曾表示不再更新；现又提交版本更新，当前维护计划未确认 |
 | 信息核对日期 | 2026-10-08 |
@@ -56,7 +56,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/tag/releases)；附件更新后需以包内版本为准。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；前轮列表文件名为 `1.19.3`，尚未取得实际 ZIP；本轮未重新请求网盘，不能确认其当前版本或与 GitHub `1.20.1` 一致。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`；[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)称无需登录、长期有效、随更新覆盖同名文件，并提供包内 `.pmod` 大小及 SHA-256，与本页 GitHub 核验记录一致。此为作者提供的副本对应关系；维护者未取得网盘 ZIP，不等于独立下载核验。
 - 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-HealthCooldownLine/releases/download/releases/HealthCooldownLine.pmod)，本轮实际包版本 `1.20.1`，公开可下载；不承诺附件不被替换。
 - 作品主页：[pvzhe-HealthCooldownLine](https://github.com/apples1949/pvzhe-HealthCooldownLine)。
 - 作者反馈入口：未单独指定，可通过上述作者发布来源查找后续反馈方式。
@@ -72,6 +72,8 @@
 安装与设置说明依据通用指南及[公开源码](https://github.com/apples1949/pvzhe-HealthCooldownLine/blob/607c48238bb07a66ad68a5a5303ba92683d98306/runtime_src/HealthCooldownLineEntry.cs)，维护者未验证该包的实际运行效果。不要将“工具与前置”分类理解为它必须作为其他作品的前置安装。
 
 ## 兼容依据与实测记录
+
+2026-10-08 [作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)明确 `1.20.1` 在游戏 `0.29.0` 的 Windows 与 Android 上均由作者实测可用；未提供完整设备与步骤记录，维护者未复现。联机状态仍未确认。
 
 2026-10-08 当前包核对：重新下载 GitHub Release 附件，只读查看 ZIP 列表及 `mod.json`：ID `healthcooldowndisplay`、版本 `1.20.1`、作者“本地”，`dependencies` / `conflicts` 为空，ZIP 仅有 `mod.json`（1,663 B）与 `Runtime/ModAssembly.dll`（69,120 B），无路径越界或符号链接。包体 31,400 B，SHA-256 `2ba13183dd965985f381e3ba63c54c7fe7b1c8b2aa7adcbe5959ac7f8020cbf2`，与 GitHub 资产元数据一致。未执行包内代码，未将空冲突清单视为兼容证明；新版游戏、平台及联机适用范围没有独立实测，历史声明仍按原版本保留。
 
@@ -93,7 +95,7 @@
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.20.1` 更新草稿，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包、作者版本历史；草稿从 `1.19.3` 更新为 `1.20.1`，下载映射及新版兼容范围仍待确认。
+- 2026-10-08：整理 `1.20.1` 更新草稿，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包、作者版本历史；草稿从 `1.19.3` 更新为 `1.20.1`，补入作者提供的下载映射及新版兼容声明，保留未独立复现边界。
 
 - 2026-09-28：更新至 `1.14.1`；依据[更新申请 #2](https://github.com/EFrostBlade/pvz-zj-mods/issues/2)、[作者源码提交](https://github.com/apples1949/pvzhe-HealthCooldownLine/commit/607c48238bb07a66ad68a5a5303ba92683d98306)及发布附件，更新功能、设置开关、源码和维护状态，保留历史兼容声明及未实测边界。
 - 2026-09-27：首次收录 `1.7.8`；依据[作者投稿](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)、作品介绍与发布包清单整理，主分类按辅助显示功能归入“工具与前置”。

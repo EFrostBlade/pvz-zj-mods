@@ -4,7 +4,7 @@
 
 新增时停按钮，暂停战场运动，同时允许种植、铲除和收集资源。
 
-> 更新草稿：蓝奏云分享页与密码已核对，实际包版本尚未独立核实，暂不合并。当前版本依据 GitHub 实际附件；历史记录保留原版本范围。
+> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -13,8 +13,8 @@
 | 主分类 | 玩法调整 |
 | 标签 | 无 |
 | 当前收录版本 | `1.0.31` |
-| 适用游戏版本 | 作者在 [Issue #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8) 对 `1.0.29` 声明 0.29；`1.0.31` 未单独确认，维护者未实测 |
-| 平台 | 作者对 `1.0.29` 声明 Windows 与 Android；`1.0.31` 未单独确认，维护者未实测 |
+| 适用游戏版本 | 作者对 `1.0.31` 声明 `0.29.0`；见[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)，维护者未实测 |
+| 平台 | 作者对 `1.0.31` 报告 Windows 与 Android 均实测可用；维护者未复现 |
 | 前置依赖 | 作者投稿声明无其他 Mod 前置；实际包 dependencies 为空，含托管运行时插件（见安装说明） |
 | 已知冲突 | 作者投稿声明无；实际发布包清单 conflicts 为空，不代表任意组合已验证 |
 | 联机说明 | 1.0.31 未确认；作者 upload tag 的旧版 README 提示多人模式未适配，见下方版本边界 |
@@ -38,7 +38,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)；投稿人和原始 Release 发布者为同一账号。
 - 原始发布页：[作者 Release](https://github.com/apples1949/pvzhe-TimeStop/releases/tag/upload)；附件更新后需以包内版本为准。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`，依据[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)；作者称统一维护并随版本更新。2026-10-08 已打开分享页并用该密码列出文件；列表中的 ZIP 文件名标示对应投稿版本，但尚未下载核对 ZIP 内实际包，不能确认与下列 GitHub 附件一致。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`；[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)称无需登录、长期有效、随更新覆盖同名文件，并提供包内 `.pmod` 大小及 SHA-256，与本页 GitHub 核验记录一致。此为作者提供的副本对应关系；维护者未取得网盘 ZIP，不等于独立下载核验。
 - 补充核对来源：[GitHub Release 附件](https://github.com/apples1949/pvzhe-TimeStop/releases/download/upload/TimeStop.pmod)，本轮实际包版本 `1.0.31`，公开可下载；不承诺附件不被替换。
 - 作者反馈入口：[投稿 Issue #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8)。
 - 源码：[作者公开工程](https://github.com/apples1949/pvzhe-TimeStop/tree/upload)。
@@ -53,6 +53,8 @@
 本包含 `Runtime/ModAssembly.dll` 托管插件，清单 `runtimeAssemblyPolicy` 为 `optional`。空 `dependencies` 仅表示未声明其他 Mod 前置，不表示纯资源包，也不保证插件未加载时功能完整。
 
 ## 兼容依据与实测记录
+
+2026-10-08 [作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)明确 `1.0.31` 在游戏 `0.29.0` 的 Windows 与 Android 上均由作者实测可用；未提供完整设备与步骤记录，维护者未复现。联机状态仍未确认。
 
 2026-10-08 当前包核对：重新下载 GitHub Release 附件，只读查看 ZIP 列表及 `mod.json`：ID `timestop`、版本 `1.0.31`、作者“本地”，`dependencies` / `conflicts` 为空，引用的运行时 DLL 存在。包体 19,175 B，SHA-256 `42083646cc85da9f57cef29c1fdcec6072cac5d0a7166051587210c52075a954`，与 GitHub 资产元数据一致。未执行包内代码，未将空冲突清单视为兼容证明；新版游戏、平台及联机适用范围没有独立实测，历史声明仍按原版本保留。
 
@@ -74,6 +76,6 @@ Release 元数据：附件 `TimeStop.pmod`，17291 字节，GitHub 提供的摘�
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.0.31` 更新草稿，来源为[作者更新 #16](https://github.com/EFrostBlade/pvz-zj-mods/issues/16)、[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)及当前 GitHub 发布包；下载入口核对尚未完成。
+- 2026-10-08：整理 `1.0.31` 更新草稿，来源为[作者更新 #16](https://github.com/EFrostBlade/pvz-zj-mods/issues/16)、[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)及当前 GitHub 发布包；补入作者提供的下载映射及新版兼容声明。
 
 - 2026-09-30：收录 1.0.29，来源为 [作者投稿 #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8)、[原始 Release](https://github.com/apples1949/pvzhe-TimeStop/releases/tag/upload) 和公开工程清单；补齐实际发布包清单及摘要核对，保留作者声明与未实测边界。
