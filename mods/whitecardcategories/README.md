@@ -4,8 +4,6 @@
 
 在选卡界面增加白卡标签分类、自动归类和可记忆的字号设置。
 
-> 收录草稿：GitHub 2.3.0 已静态核验；网盘包字节摘要不同，作者称内部内容一致，尚待补充内部文件摘要。
-
 | 项目 | 内容 |
 | --- | --- |
 | Mod ID | `whitecardcategories` |
@@ -31,7 +29,7 @@
 
 - 作者主页：[apples1949](https://github.com/apples1949)。
 - 原始发布页：[2.3.0 Release](https://github.com/apples1949/pvzhe-WhiteCardCategories/releases/tag/upload)。
-- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`；[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)称无需登录、长期有效并随更新覆盖同名文件。网盘 ZIP 内 `.pmod` 声明为 19,822 B、SHA-256 `5be0b27540b9c73df416db1b7f9074305f491b4f465f3b6b3ce97ff4abb79644`，与 GitHub 附件字节不同；作者称只有 ZIP 时间戳不同、内部清单与 DLL 相同，维护者未取得网盘 ZIP，尚未独立验证此说法。
+- 下载入口：[作者网盘（蓝奏云）](https://apples1949.lanzouc.com/b007uuknqd)，密码 `762b`；[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)称无需登录、长期有效并随更新覆盖同名文件。网盘 ZIP 内 `.pmod` 声明为 19,822 B、SHA-256 `5be0b27540b9c73df416db1b7f9074305f491b4f465f3b6b3ce97ff4abb79644`，与 GitHub 附件字节不同。[作者澄清](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6063726622)确认白卡是“原样上传”的例外：网盘副本由本地同版本构建另行打包，仅容器时间戳不同；完整文件列表只有下述清单和 DLL，两项大小与 SHA-256 均与本页 GitHub 实际值相同。这是作者提供的副本映射；维护者未取得网盘 ZIP，未独立比对其内容。
 - 补充核对来源：[GitHub 实际附件](https://github.com/apples1949/pvzhe-WhiteCardCategories/releases/download/upload/WhiteCardCategories.pmod)，公开下载，附件可被作者替换。
 - 作者反馈入口：[投稿 #19](https://github.com/EFrostBlade/pvz-zj-mods/issues/19)。
 - 源码：[作者工程](https://github.com/apples1949/pvzhe-WhiteCardCategories)；未执行脚本或编译。
@@ -51,8 +49,8 @@ ZIP 只有两项：`mod.json`（2,071 B，SHA-256 `eff909a71e7de80d0d09b9fb133b6
 
 ## 已知问题
 
-网盘与 GitHub 包摘要差异待补充内部文件摘要；未把“内容一致”记为逐字节一致。平台与联机支持未确认。
+平台与联机支持未确认。网盘与 GitHub 容器摘要不同；作者已补齐内部两项摘要及重新打包说明，未将作者的“内部内容一致”写成维护者独立核验或整个包逐字节一致。
 
 ## 条目更新记录
 
-- 2026-10-08：依据投稿 #19、[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)及 GitHub 实际包整理 2.3.0 草稿。原 GitHub 1.2.1（13,318 B，SHA-256 `ba7e5436dfaa80af665959e801905bcc55bfd0dcc15c77c5bfbde67eaacf1022`）已被替换，旧摘要仅为历史记录。
+- 2026-10-08：依据投稿 #19、[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)、[实际包补充](https://github.com/EFrostBlade/pvz-zj-mods/issues/19#issuecomment-6063724453)、[副本差异澄清](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6063726622)及重新下载的 GitHub 实际包首次收录 2.3.0。原 GitHub 1.2.1（13,318 B，SHA-256 `ba7e5436dfaa80af665959e801905bcc55bfd0dcc15c77c5bfbde67eaacf1022`）已被替换，旧摘要仅为历史记录。

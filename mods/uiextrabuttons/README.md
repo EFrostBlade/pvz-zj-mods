@@ -4,8 +4,6 @@
 
 在横版 UI 的选卡阶段补充商店与图鉴入口。
 
-> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
-
 | 项目 | 内容 |
 | --- | --- |
 | Mod ID | `uiextrabuttons` |
@@ -49,7 +47,7 @@
 
 游戏版本、平台和功能依据[作者投稿 #20](https://github.com/EFrostBlade/pvz-zj-mods/issues/20)，不构成维护者实测。
 
-2026-10-08 重新下载并静态核对 GitHub 附件：8,885 B，SHA-256 `eeffdd2e6253a589eed5cd5a46da35b98c2caa19771333a593a2e96db0ae66ec`，与 GitHub 资产摘要一致。实际 ZIP 内 `mod.json` 的 ID `uiextrabuttons`、版本 `1.0.3`、作者 `本地`；`dependencies` 和 `conflicts` 均为空，清单引用的运行时 DLL 存在。仅查看清单和文件列表，未执行任何包内代码。
+2026-10-08 重新下载并静态核对 GitHub 附件：8,885 B，SHA-256 `eeffdd2e6253a589eed5cd5a46da35b98c2caa19771333a593a2e96db0ae66ec`，与 GitHub 资产摘要一致。实际 ZIP 内 `mod.json` 的 ID `uiextrabuttons`、版本 `1.0.3`、作者 `本地`；`dependencies` 和 `conflicts` 均为空，清单引用的运行时 DLL 存在。ZIP 仅含 `mod.json`（994 B，SHA-256 `d371c0a94004f2e2c80063036b9d761ffa73495f2f91f016a4eb603486468777`）和 `Runtime/ModAssembly.dll`（16,896 B，SHA-256 `c8d6c0e846ec645f123619f9140472d7599aa9dcc28036d374aeb26469caa107`）；无路径越界、符号链接或重复文件名。仅读取清单和文件列表，未执行包内代码，不构成运行安全或兼容保证。
 
 以下为作者在投稿中报告的测试，维护者未复现，未独立核验视频或截图内容：
 
@@ -60,9 +58,9 @@ Mod 版本：1.0.0 / 1.0.1 / 1.0.2 / 1.0.3
 步骤与结果：横版 UI 进入战斗选卡界面，右上角出现并排两个按钮，点击分别打开商店与图鉴；选卡结束后按钮隐藏；切回竖版后本作品按钮隐藏、游戏自带按钮显示。
 测试人：作者
 日期：2026-10-01
-证据链接：见上方演示截图
+证据链接：[作者投稿中的演示截图及测试说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/20)
 
-作者于 2026-10-08 将 [README](https://github.com/apples1949/pvzhe-UIExtraButtons/blob/d886793c7d9c77eb8076c238ffab97aeb28ccec1/README.md) 版本号同步为 `1.0.3`，补充点击修复说明；但开头仍写“右下角竖排”，与投稿和实际包清单的“右上角横向并排”冲突，待作者确认。README 仍保留开发侧未完成实机验证的旧说明，不将其改写为新版实测。
+作者在[布局澄清](https://github.com/EFrostBlade/pvz-zj-mods/issues/20#issuecomment-6063767627)中确认 1.0.3 实际为右上角横向并排（左“商店”、右“查看图鉴”）；右下角竖排是 1.0.0 遗留描述。已核对[README 修正提交](https://github.com/apples1949/pvzhe-UIExtraButtons/commit/4d6dc4c849140d8099fb46553c114a7aedf5b2fe)，其概述现与投稿及实际包清单一致。该提交仅修改文档，当前附件摘要未变。README 仍保留旧版诊断示例与开发侧未完成实机验证的说明；新版测试按上述作者投稿记录，不作为维护者实测。
 
 社区独立实测：暂无记录。
 
@@ -72,4 +70,4 @@ Mod 版本：1.0.0 / 1.0.1 / 1.0.2 / 1.0.3
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.0.3` 收录草稿，依据[作者投稿 #20](https://github.com/EFrostBlade/pvz-zj-mods/issues/20)与 GitHub Release 实际附件；保留作者声明和未实测边界。
+- 2026-10-08：首次收录 `1.0.3`，依据[作者投稿 #20](https://github.com/EFrostBlade/pvz-zj-mods/issues/20)、[作者布局澄清](https://github.com/EFrostBlade/pvz-zj-mods/issues/20#issuecomment-6063767627)与重新下载的 GitHub Release 实际附件；保留作者声明和未实测边界。
