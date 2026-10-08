@@ -21,7 +21,7 @@
 
 ## 内容介绍
 
-当前包内 `CHANGELOG.md` 声明：`1.2.0.0` 起每 25 秒产出 50 阳光，并更改随机子弹池；`1.2.3.0` 排除 8 种加农炮子弹后为 79 种。以上为随包作者日志，未验证运行时插件行为。
+当前包内 `CHANGELOG.md` 声明：`1.2.0.0` 起每 25 秒产出 50 阳光，并更改随机子弹池；`1.2.3.0` 排除 8 种加农炮子弹后为 79 种。本轮可访问的[作者详情页](https://josnil.github.io/pvz-mods/mod/burgergatlingpea.html)也已标明 `1.2.3.0`、79 种随机子弹及每 25 秒产出 50 阳光，与随包日志一致；未验证运行时插件行为。
 
 旧[投稿 #11](https://github.com/EFrostBlade/pvz-zj-mods/issues/11)对应 `1.1.1.0`，描述 10 种等权子弹合计 97%、黄油 3%，不能沿用为当前版本结论。当前 `mod.json` 的简介仍保留旧随机池描述，与同包日志不一致，需作者同步说明。
 
@@ -46,7 +46,7 @@
 
 静态包核对（2026-10-08）：重新下载当前 GitHub Release 附件，200,678 B，SHA-256：`6349f16508bfadeb8c38dbfb1c24f0f6d79284eb93c644e073a7373b969c1c64`，与当前 GitHub 资产摘要一致。ZIP 内 `mod.json`：ID `burgergatlingpea`、版本 `1.2.3.0`、作者云漫行；`dependencies`、`conflicts` 为空，`provides` 含 Character / CharacterSprite / Packet 各 1 项，`overrides` 为空。清单引用的 `Runtime/ModAssembly.dll` 与 `Localization/translations.csv` 均存在，运行时入口为 `BurgerGatlingPeaRuntimeEntry`，策略 `optional`。仅读取清单、文件列表及更新日志，未执行包内代码。
 
-此前 2026-09-30 核对的 `1.1.1.0` 包为 197,437 B，SHA-256 `9841ea58cc38da1c3d55925f9e6c7655277ceab72912f569cc2a3596d06c0c3f`；此为历史记录，不再代表当前 URL 的附件。作者站点本次访问被环境代理拒绝，未取得当前页面内容，未核对夸克副本。
+此前 2026-09-30 核对的 `1.1.1.0` 包为 197,437 B，SHA-256 `9841ea58cc38da1c3d55925f9e6c7655277ceab72912f569cc2a3596d06c0c3f`；此为历史记录，不再代表当前 URL 的附件。本轮已重新读取作者详情页，页面标明当前版本及新版功能，但未提供解决上述游戏版本冲突的说明；未核对夸克副本。
 
 社区实测：暂无记录。
 
