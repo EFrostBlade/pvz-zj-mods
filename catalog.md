@@ -17,7 +17,9 @@
 
 ## 综合扩展
 
-暂无收录。
+- [点击反馈与自动拾取开关](mods/mobiletapfeedback/README.md) — 作者：apples1949｜为关卡入口增加按压反馈，并提供阳光与金币自动拾取开关。
+- [手机端操作修复](mods/mobileuxfixes/README.md) — 作者：apples1949｜滑动选卡时撤销误选，并改善再次点击卡牌取消选择。
+
 
 ## 角色与卡牌
 
@@ -31,12 +33,12 @@
 
 ## 关卡与地图
 
-暂无收录。
+- [墓碑直达](mods/levelquickjump/README.md) — 作者：apples1949｜记忆各类关卡上次选择的章节，返回时自动定位。
 
 ## 玩法调整
 
+- [三倍加速](mods/doublespeedtoggle/README.md) — 作者：apples1949｜新增与原加速互斥的速度开关，普通关卡为三倍速度。
 - [豌豆强化](mods/peaoverhaul/README.md) — 作者：云漫行｜四种豌豆子弹放大 1.6×、穿透 8 个，纯覆盖型演示模板。
-
 - [时停](mods/timestop/README.md) — 作者：apples1949｜暂停战场运动，同时允许种植、铲除和收集资源。
 
 ## 外观与音效
