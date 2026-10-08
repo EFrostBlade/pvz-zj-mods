@@ -21,7 +21,7 @@
 
 ## 角色与卡牌
 
-- [超级汉堡射手](mods/burgergatlingpea/README.md) — 作者：云漫行｜每 2.0 秒发射 9 颗随机子弹，10% 概率触发 5 秒约 300 颗大招。
+- [超级汉堡射手](mods/burgergatlingpea/README.md) — 作者：云漫行｜新增使用随机子弹的植物；当前附件 1.2.3.0 的资料与兼容范围待核对。
 - [暴走舞王伽刚特尔投石车僵尸](mods/discogargantuarpult/README.md) — 作者：云漫行｜外形与机制照搬小鬼投石车，扔出的却是暴走舞王伽刚特尔（碾压 100000）。
 - [奶龙僵尸](mods/nailongzombie/README.md) — 作者：云漫行｜保留普通僵尸全部基础行为，每 10 秒大笑控场，全场植物僵直 3 秒。
 - [向日葵女王僵尸](mods/sunflowerqueenzombie/README.md) — 作者：云漫行｜一包两角色：女王 6 颗追踪火球齐射 + 3×3 灼烧光环 + 召唤伴舞，舞者同款女王头。
