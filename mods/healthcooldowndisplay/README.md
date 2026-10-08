@@ -6,7 +6,7 @@
 
 > 作者在[作者补充说明](https://github.com/EFrostBlade/pvz-zj-mods/issues/25#issuecomment-6060160375)报告：当前版本已解决旧版自定义植物、僵尸类 Mod 的程序集身份名冲突。维护者未复现，不构成所有组合兼容保证。
 
-> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
+> 核对范围：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -95,7 +95,7 @@
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.20.1` 更新草稿，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包、作者版本历史；草稿从 `1.19.3` 更新为 `1.20.1`，补入作者提供的下载映射及新版兼容声明，保留未独立复现边界。
+- 2026-10-08：整理 `1.20.1` 版本更新，来源为[作者更新 #14](https://github.com/EFrostBlade/pvz-zj-mods/issues/14)、[下载修正 #25](https://github.com/EFrostBlade/pvz-zj-mods/issues/25)及当前 GitHub 发布包、作者版本历史；记录从 `1.19.3` 更新为 `1.20.1`，补入作者提供的下载映射及新版兼容声明，保留未独立复现边界。
 
 - 2026-09-28：更新至 `1.14.1`；依据[更新申请 #2](https://github.com/EFrostBlade/pvz-zj-mods/issues/2)、[作者源码提交](https://github.com/apples1949/pvzhe-HealthCooldownLine/commit/607c48238bb07a66ad68a5a5303ba92683d98306)及发布附件，更新功能、设置开关、源码和维护状态，保留历史兼容声明及未实测边界。
 - 2026-09-27：首次收录 `1.7.8`；依据[作者投稿](https://github.com/EFrostBlade/pvz-zj-mods/issues/1)、作品介绍与发布包清单整理，主分类按辅助显示功能归入“工具与前置”。

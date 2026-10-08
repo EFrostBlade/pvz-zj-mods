@@ -4,7 +4,7 @@
 
 新增经典模仿者卡，复制上一次选择的植物种子包；随机取卡场景下随机变成彩卡植物。
 
-> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
+> 核对范围：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -76,6 +76,6 @@ Release 元数据：附件 `ImitaterClassic.pmod`，13597 字节，GitHub 提供
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.5.0` 更新草稿，来源为[作者更新 #15](https://github.com/EFrostBlade/pvz-zj-mods/issues/15)、[下载修正 #23](https://github.com/EFrostBlade/pvz-zj-mods/issues/23)及当前 GitHub 发布包；补入作者提供的下载映射及新版兼容声明。
+- 2026-10-08：整理 `1.5.0` 版本更新，来源为[作者更新 #15](https://github.com/EFrostBlade/pvz-zj-mods/issues/15)、[下载修正 #23](https://github.com/EFrostBlade/pvz-zj-mods/issues/23)及当前 GitHub 发布包；补入作者提供的下载映射及新版兼容声明。
 
 - 2026-09-30：收录 1.3.3，来源为 [作者投稿 #7](https://github.com/EFrostBlade/pvz-zj-mods/issues/7)、[原始 Release](https://github.com/apples1949/pvzhe-ImitaterClassic/releases/tag/upload) 和公开工程清单；补齐实际发布包清单及摘要核对，保留作者声明与未实测边界。

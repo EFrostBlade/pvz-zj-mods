@@ -4,7 +4,7 @@
 
 新增时停按钮，暂停战场运动，同时允许种植、铲除和收集资源。
 
-> 草稿资料：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
+> 核对范围：GitHub 实际包已静态核验；网盘包对应关系依据作者补充声明，维护者未下载网盘 ZIP。
 
 | 项目 | 内容 |
 | --- | --- |
@@ -76,6 +76,6 @@ Release 元数据：附件 `TimeStop.pmod`，17291 字节，GitHub 提供的摘�
 
 ## 条目更新记录
 
-- 2026-10-08：整理 `1.0.31` 更新草稿，来源为[作者更新 #16](https://github.com/EFrostBlade/pvz-zj-mods/issues/16)、[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)及当前 GitHub 发布包；补入作者提供的下载映射及新版兼容声明。
+- 2026-10-08：整理 `1.0.31` 版本更新，来源为[作者更新 #16](https://github.com/EFrostBlade/pvz-zj-mods/issues/16)、[下载修正 #24](https://github.com/EFrostBlade/pvz-zj-mods/issues/24)及当前 GitHub 发布包；补入作者提供的下载映射及新版兼容声明。
 
 - 2026-09-30：收录 1.0.29，来源为 [作者投稿 #8](https://github.com/EFrostBlade/pvz-zj-mods/issues/8)、[原始 Release](https://github.com/apples1949/pvzhe-TimeStop/releases/tag/upload) 和公开工程清单；补齐实际发布包清单及摘要核对，保留作者声明与未实测边界。
