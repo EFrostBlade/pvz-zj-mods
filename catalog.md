@@ -48,5 +48,6 @@
 
 ## 工具与前置
 
+- [FPS 显示](mods/fpsdisplay/README.md) — 作者：apples1949｜显示实时帧率数字，随窗口尺寸与横竖版切换调整位置。
 - [cd显示（血条·装填倒计时）](mods/healthcooldowndisplay/README.md) — 作者：apples1949｜显示角色冷却、装填进度、障碍物血量和种植冷却，支持分类开关。
 - [图鉴商店快捷按钮](mods/uiextrabuttons/README.md) — 作者：apples1949｜在横版 UI 的选卡阶段补充商店与图鉴入口。
