@@ -27,6 +27,7 @@
 - [暴走舞王伽刚特尔投石车僵尸](mods/discogargantuarpult/README.md) — 作者：云漫行｜外形与机制照搬小鬼投石车，扔出的却是暴走舞王伽刚特尔（碾压 100000）。
 - [原版模仿者（经典模仿者）](mods/imitaterclassic/README.md) — 作者：apples1949｜新增经典模仿者卡，复制上一次选择的植物种子包。
 - [奶龙僵尸](mods/nailongzombie/README.md) — 作者：云漫行｜保留普通僵尸全部基础行为，每 10 秒大笑控场，全场植物僵直 3 秒。
+- [随机模仿者](mods/randomimitater/README.md) — 作者：小橙c｜种下钻卡随机开出植物或敌对僵尸，可调概率与阳光消耗，并支持多种地形种植。
 - [向日葵女王僵尸](mods/sunflowerqueenzombie/README.md) — 作者：云漫行｜一包两角色：女王 6 颗追踪火球齐射 + 3×3 灼烧光环 + 召唤伴舞，舞者同款女王头。
 - [超级机枪读报僵尸](mods/supergatlingpaper/README.md) — 作者：云漫行｜读报身体配机枪射手头，1.5 秒连发 7 颗 + 10% 大招，报纸破后 3 倍速暴走。
 - [超级机枪射手](mods/supergatlingpea/README.md) — 作者：云漫行｜每 1.5 秒齐射 7 颗豌豆，10% 概率触发 5 秒 300 颗大招。
